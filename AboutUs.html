@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="AboutUs.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            /* overflow-x: hidden; */
+        }
+        
+        body {
+            background: #fff linear-gradient( 90deg, #d0cbcb, #20b920, #ef3f33);
+            background: rgb(232, 214, 214);
+            background: linear-gradient(81deg, rgba(232, 214, 214, 1) 31%, rgba(30, 191, 167, 0.6598389697675946) 89%);
+            height: 100vh;
+            width: 100%;
+        }
+        
+        html {
+            height: 100vh;
+        }
+        
+        header {
+            position: absolute;
+            /* background: #fff; */
+            background: #fff linear-gradient( 90deg, #d0cbcb, #20b920, #ef3f33);
+            background: rgb(232, 214, 214);
+            background: linear-gradient(81deg, rgba(232, 214, 214, 1) 31%, rgba(30, 191, 167, 0.6598389697675946) 89%);
+            width: 100%;
+            height: 10vh;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 170px;
+            transition: 0.4s ease;
+            z-index: 1000000;
+        }
+        
+        .ourname {
+            color: black;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        #spn1,
+        #spn2 {
+            font-size: 2em;
+            color: #800000;
+        }
+        
+        #spn2 {
+            margin-left: 15px;
+        }
+        
+        .navbar {
+            position: relative;
+        }
+        
+        .navbaritems {
+            padding-top: 12px
+        }
+        
+        .navbaritems a {
+            color: rgb(207, 23, 54);
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 500;
+            margin: 0px 15px;
+            transition: 0.4s ease;
+            position: relative;
+            top: 18;
+        }
+        
+        .navbaritems a::before {
+            content: "";
+            /* background: #800000; */
+            /* background-color: #f7b42c;
+    background-color: #36096d; */
+            background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+            /* background: linear-gradient(90deg, #000428, #004e92); */
+            /* background: linear-gradient(90deg, #ff9966, #ff5e62); */
+            /* background: linear-gradient(90deg, #4568dc, #b06ab3); */
+            width: 0%;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: 0.4s ease;
+        }
+        
+        .navbaritems a:hover::before {
+            width: 100%;
+        }
+        
+        @media (max-width: 1000px) and (min-width:701px) {
+            header {
+                padding: 15px 61px;
+                width: 100%;
+            }
+            .navbaritems a {
+                font-size: 1.1em;
+                margin: 0px 6px;
+            }
+            .ourname {
+                font-size: 1.2em;
+            }
+        }
+        
+        .c {
+            /* position: absolute; */
+            width: 100%;
+            top: 8.5%;
+        }
+        
+        @media(max-width:970px) {
+            .c {
+                top: 9%;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            header {
+                padding: 15px 15px;
+            }
+            .navbar {
+                display: none;
+            }
+            .navbar.active {
+                position: fixed;
+                border: 3px solid black;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(1, 1, 1, 0.5);
+                backdrop-filter: blur(2px);
+            }
+            .navbar.active .navbaritems {
+                backdrop-filter: blur(4px);
+                background: transparent;
+                width: 400px;
+                height: 400px;
+                margin: 20px;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                box-shadow: 0 5px 50px rgb(1 1 1 /20%);
+                font-size: 14px;
+            }
+            .navbaritems a {
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1.2em;
+                margin: 20px;
+                font-weight: bold;
+                color: white !important;
+            }
+            .menunav {
+                background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png") no-repeat;
+                background-position: center;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                transition: 0.4s ease;
+                z-index: 1000000;
+            }
+            .menunav.active {
+                z-index: 1000000;
+                transition: 0.4s ease;
+                background: url("https://cdn1.vectorstock.com/i/1000x1000/96/55/close-icon-delete-remove-cancel-exit-symbol-vector-21679655.jpg") no-repeat;
+                background-position: center;
+            }
+            .rainbow {
+                opacity: 0;
+            }
+            .ourname {
+                font-size: 1.1em;
+            }
+            .c {
+                top: 7%;
+            }
+            header {
+                background: #fff linear-gradient( 90deg, #d0cbcb, #20b920, #ef3f33);
+            }
+        }
+        
+        @media(max-width:1150px) and (min-width:1000px) {
+            .ourname {
+                font-size: 1.5em;
+            }
+            .navbaritems a {
+                font-size: 1.4em;
+                margin: 0px 7px;
+            }
+        }
+        
+        main {
+            margin-top: 10em;
+            min-height: max-content;
+            width: 100%;
+            overflow: hidden;
+            /* padding: 100px; */
+        }
+        
+        .hc {
+            height: 50px;
+            width: 500px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+            position: relative;
+            left: 2%;
+            /* background-color: yellow; */
+            border-bottom: 2px solid black;
+        }
+        
+        .hc span {
+            /* background-color: black; */
+            position: absolute;
+            padding: 0px 8px;
+            font-size: 30px;
+            /* color: rgb(39, 148, 221) !important; */
+            color: #fff !important;
+            /* width: 150px; */
+            width: 100%;
+            height: 100%;
+            text-transform: uppercase;
+            overflow: hidden;
+            /* font-size: clamp(2rem, 1.5rem, 2rem); */
+        }
+        
+        .color {
+            position: absolute;
+            height: 100%;
+            left: 0%;
+            width: 150px;
+            /* background-color: black; */
+            background: rgb(53, 22, 78);
+            background: linear-gradient(90deg, rgba(53, 22, 78, 0.9612219887955182) 0%, rgba(78, 32, 139, 1) 23%, rgba(0, 182, 153, 1) 100%);
+        }
+        
+        .hc span::before {
+            position: absolute;
+            content: "";
+            width: 61%;
+            height: 101%;
+            /* background-color: black; */
+            background-color: #00b699;
+            z-index: -1;
+            transform: rotate(45deg);
+        }
+        
+        @media(max-width:501px) {
+            .hc {
+                width: 280px;
+            }
+            .hc span::before {
+                width: 97%;
+            }
+        }
+        
+        .picc {
+            left: 2%;
+            top: 4%;
+            height: 288px;
+            width: 500px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 80px;
+        }
+        
+        .first,
+        .second,
+        .third {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .first {
+            background: url(SkyBright.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: center/cover;
+            opacity: 0.85;
+            z-index: -1;
+        }
+        
+        .lh1 {
+            opacity: 0;
+            color: #03a9f4;
+        }
+        
+        .third {
+            z-index: 2;
+            /* border: 4px solid #fff; */
+            /* width: 95%;
+    height: 85%; */
+        }
+        
+        .aboutS {
+            height: max-content;
+            width: 100%;
+            padding: 10px 63px;
+            font-size: clamp(3rem, 2rem);
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            /*👉  justify-content: center;
+    align-items: center;👈*/
+            /* height: 500px;
+*/
+            /* height: 100%; */
+            height: fit-content;
+            width: auto;
+            /* width: 80vw; */
+        }
+        
+        .c1 {
+            height: 300px;
+            width: 250px;
+            /* height: 500px;
+    width: 500px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* border: 2px solid red; */
+            /* margin: 10px 10px 0px 20px; */
+            /* height: 44%;
+width: 386px; */
+        }
+        
+        .c12 {
+            height: 300px;
+            width: 250px;
+            /* height: 500px;
+    width: 500px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* border: 2px solid red; */
+            /* margin: 10px 10px 0px 20px; */
+            /* height: 44%;
+width: 386px; */
+        }
+        
+        .c2 {
+            height: 300px;
+            /* height: 500px; */
+            /* width: 500px; */
+            width: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: 0.3s ease-in-out;
+            /* border: 2px solid blue; */
+            /* margin: 10px 10px 0px 20px; */
+            /* height: 44%;
+width: 386px; */
+        }
+        
+        .c22 {
+            height: 300px;
+            /* height: 500px; */
+            /* width: 500px; */
+            width: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: 0.3s ease-in-out;
+            /* border: 2px solid blue; */
+            /* margin: 10px 10px 0px 20px; */
+            /* height: 44%;
+width: 386px; */
+        }
+        
+        .bottom {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: #000 url("hphoto.jpeg")no-repeat center center/cover;
+            /* z-index: 1; */
+        }
+        
+        .bottom3 {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: #000 url("ms.jpeg")no-repeat center center/cover;
+            /* z-index: 1; */
+        }
+        
+        .bottom2 {
+            height: 100%;
+            /* width: 100%; */
+            width: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 12px;
+            font-size: 1.2em;
+            background: rgb(0, 36, 20);
+            background: linear-gradient(90deg, rgba(0, 36, 20, 0.9167017148656338) 0%, rgba(9, 64, 121, 1) 35%, rgba(0, 35, 255, 0.9643207624846813) 100%);
+            color: #fff;
+            opacity: 0;
+        }
+        
+        .bottom22 {
+            height: 100%;
+            /* width: 100%; */
+            width: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 12px;
+            font-size: 1.2em;
+            background: rgb(0, 36, 20);
+            background: linear-gradient(90deg, rgba(0, 36, 20, 0.9167017148656338) 0%, rgba(9, 64, 121, 1) 35%, rgba(0, 35, 255, 0.9643207624846813) 100%);
+            color: #fff;
+            opacity: 0;
+        }
+        
+        .center {
+            position: absolute;
+            left: 100%;
+            /* border: 2px solid green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* width: 20%; */
+            width: 0%;
+            z-index: 1;
+            font-size: 32px;
+            color: #fff;
+            transition: .3s ease-in-out;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+        }
+        
+        .center3 {
+            position: absolute;
+            left: 100%;
+            /* border: 2px solid green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* width: 20%; */
+            width: 0%;
+            z-index: 1;
+            font-size: 32px;
+            color: #fff;
+            transition: .3s ease-in-out;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+        }
+        
+        .top {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        
+        .top2 {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        
+        #btn {
+            border: none !important;
+            filter: invert() !important;
+            z-index: 2 !important;
+            width: 0%;
+            transition: 0.3s ease-in-out;
+        }
+        
+        #btn2 {
+            border: none !important;
+            filter: invert() !important;
+            z-index: 2 !important;
+            width: 0%;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .btn-default {
+            color: rgba(0, 0, 0, 1) !important;
+            background-color: #fff0 !important;
+            border-color: #ccc;
+            z-index: 2 !important;
+        }
+        
+        .btn:active,
+        .btn:focus {
+            outline: transparent !important;
+            border-color: transparent !important;
+            z-index: 2 !important;
+        }
+        
+        .center2 {
+            position: absolute;
+            display: flex;
+            height: 0%;
+            /* height: 20%; */
+            width: 100%;
+            z-index: 2;
+            font-size: 32px;
+            color: #fff;
+            top: 100%;
+            font-size: 1.2em;
+            background: rgba(0, 36, 20, 0.2);
+            background: linear-gradient(90deg, rgba(0, 36, 20, 0.9167017148656338) 0%, rgba(9, 64, 121, 1) 35%, rgba(0, 35, 255, 0.9643207624846813) 100%);
+            color: #fff;
+            opacity: 0;
+            z-index: 10;
+            bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            z-index: -100;
+        }
+        
+        .center22 {
+            position: absolute;
+            display: flex;
+            height: 0%;
+            /* height: 20%; */
+            width: 100%;
+            z-index: 2;
+            font-size: 32px;
+            color: #fff;
+            top: 100%;
+            font-size: 1.2em;
+            background: rgba(0, 36, 20, 0.2);
+            background: linear-gradient(90deg, rgba(0, 36, 20, 0.9167017148656338) 0%, rgba(9, 64, 121, 1) 35%, rgba(0, 35, 255, 0.9643207624846813) 100%);
+            color: #fff;
+            opacity: 0;
+            z-index: 10;
+            bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            z-index: -100;
+        }
+        
+        .center2 li {
+            list-style: none;
+            padding: 0px 16px;
+        }
+        
+        .center22 li {
+            list-style: none;
+            padding: 0px 16px;
+        }
+        
+        .center2 li a {
+            display: inline-block;
+            margin-right: 20px;
+            filter: invert(1);
+            transform: scale(0.8);
+            transition: 0.5s;
+        }
+        
+        .center22 li a {
+            display: inline-block;
+            margin-right: 20px;
+            filter: invert(1);
+            transform: scale(0.8);
+            transition: 0.5s;
+        }
+        
+        .center2 li a:hover {
+            transform: scale(0.5) translateY(-15px);
+        }
+        
+        .center22 li a:hover {
+            transform: scale(0.5) translateY(-15px);
+        }
+        
+        .center2 li a:active,
+        .center2 li a:focus {
+            list-style: none;
+        }
+        
+        .center22 li a:active,
+        .center22 li a:focus {
+            list-style: none;
+        }
+        
+        .ii {
+            position: absolute;
+            top: 70%;
+            /* top: 100%; */
+            width: 100%;
+            height: 0%;
+            opacity: 0;
+            height: 30%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: -1;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .ii2 {
+            transition: 0.3s ease-in-out;
+            position: absolute;
+            /* top: 100%; */
+            top: 70%;
+            width: 100%;
+            /* height: 0%; */
+            opacity: 0;
+            height: 30%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: -1;
+        }
+        
+        .hii,
+        .sh {
+            font-size: 1.2em !important;
+            color: #fff;
+        }
+        
+        .mc {
+            flex-wrap: wrap;
+            transition: 0.3s ease-in-out;
+            width: fit-content;
+        }
+        
+        @media(max-width:1000px) {
+            .ii,
+            .ii2 {
+                top: 0%;
+                bottom: 100%;
+                z-index: 0;
+            }
+            .container {
+                width: 90%;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 100px;
+            }
+            .c1 {
+                height: 450px;
+                width: 450px;
+            }
+            .c12 {
+                height: 450px;
+                width: 450px;
+            }
+            .c2 {
+                width: 450px;
+                height: 0px;
+            }
+            .c22 {
+                width: 450px;
+                height: 0px;
+            }
+            .center {
+                left: 0%;
+                top: 100%;
+                width: 100%;
+                height: 0%;
+            }
+            .center3 {
+                left: 0%;
+                top: 100%;
+                width: 100%;
+                height: 0%;
+            }
+            .bottom2 {
+                font-size: 1.3em;
+                padding: 10px 24px;
+            }
+            .bottom22 {
+                font-size: 1.3em;
+                padding: 10px 24px;
+            }
+            .btn {
+                transform: rotate(90deg);
+            }
+            .btn2 {
+                transform: rotate(90deg);
+            }
+        }
+        
+        @media(max-width:450px) {
+            .container {
+                width: 260px;
+            }
+            .c1 {
+                height: 300px;
+                width: 260px;
+            }
+            .c12 {
+                height: 300px;
+                width: 260px;
+            }
+            .bottom2 {
+                font-size: 1.1em;
+                padding: 20px 15px;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            .bottom22 {
+                font-size: 1.1em;
+                padding: 20px 15px;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            .hii,
+            .sh {
+                font-size: 0.8em !important;
+                color: #fff;
+            }
+        }
+        
+        .mc {
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.856);
+            /* width: 100%;
+    cursor: pointer;
+    height: 55%; */
+            color: whitesmoke;
+            margin-top: 35px;
+            min-height: 70vh;
+            max-height: max-content;
+            /* background: gray; */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .containerd {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .cont1 {
+            margin-left: 20px;
+            margin-top: 50px;
+        }
+        
+        .cont2 {
+            margin-left: 20px;
+            margin-top: 50px;
+        }
+        
+        .cont3 {
+            margin-left: 20px;
+            margin-top: 50px;
+        }
+        
+        .cont4 {
+            margin-left: 20px;
+            margin-top: 50px;
+        }
+        
+        .cont5 {
+            margin-left: 20px;
+            margin-top: 50px;
+        }
+        
+        .rowa {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+        
+        li {
+            list-style: none;
+            margin-top: 4px;
+        }
+        
+        .fa {
+            text-decoration: none;
+            color: white!important;
+        }
+        
+        li .fa {
+            text-decoration: none;
+            color: white!important;
+        }
+        
+        u .fa {
+            text-decoration: none;
+            color: white!important;
+        }
+        
+        .cpy p {
+            position: relative;
+            bottom: -34px;
+        }
+        
+        @media(min-width:1000px) {
+            .cpy p {
+                bottom: -100px;
+            }
+        }
+        
+        @media(max-width:521px) {
+            .picc {
+                margin-left: 2px;
+                margin-right: 2px;
+                width: auto;
+                left: 0%;
+            }
+        }
+        
+        .btn.active,
+        .btn:active {
+            background-image: none;
+            outline: 0;
+            box-shadow: inset 0 0px 0px rgb(0 0 0 / 13%) !important;
+            /* box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%); */
+        }
+        
+        .write {
+            font-size: 50px;
+        }
+        
+        .containerw {
+            position: absolute;
+            display: flex;
+            width: max-width;
+        }
+        
+        .write {
+            margin-right: 5px;
+            height: 66px;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+            animation: harshul 3s ease-in infinite forwards;
+        }
+        
+        .mcc {
+            position: relative;
+            margin-left: 50px;
+            margin-bottom: 150px;
+            /* width: 100vw; */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+        
+        @keyframes harshul {
+            0% {
+                width: 0%;
+            }
+            10% {
+                width: 25%;
+            }
+            20% {
+                width: 40%;
+            }
+            25% {
+                width: 50%;
+            }
+            35% {
+                width: 70%;
+            }
+            45% {
+                width: 90%;
+            }
+            50% {
+                width: 100%;
+            }
+            55% {
+                width: 90%;
+            }
+            65% {
+                width: 70%;
+            }
+            75% {
+                width: 50%;
+            }
+            80% {
+                width: 40%;
+            }
+            90% {
+                width: 25%;
+            }
+            100% {
+                width: 0%;
+            }
+        }
+        
+        .cursor {
+            border: 2px solid black;
+            animation: harshuls 3s ease-in infinite forwards;
+        }
+        
+        @keyframes harshuls {
+            0% {
+                border-color: black;
+            }
+            10% {
+                border-color: transparent;
+            }
+            20% {
+                border-color: black;
+            }
+            25% {
+                border-color: transparent;
+            }
+            35% {
+                border-color: black;
+            }
+            45% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: black;
+            }
+            55% {
+                border-color: transparent;
+            }
+            65% {
+                border-color: black;
+            }
+            75% {
+                border-color: transparent;
+            }
+            80% {
+                border-color: black;
+            }
+            90% {
+                border-color: transparent;
+            }
+            100% {
+                border-color: black;
+            }
+        }
+        
+        @media(max-width:500px) {
+            .h {
+                font-size: .7em;
+            }
+            .cursor {
+                height: 3.7em;
+            }
+            .mcc {
+                margin-bottom: 100px;
+                margin-left: 20px;
+            }
+            main {
+                margin-top: 8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="ourname"><span id="spn1">S</span>kyline<span id="spn2">T</span>ravels</p>
+        <div class="menunav"></div>
+        <div class="navbar">
+            <div class="navbaritems">
+                <a href="" style="color:black; font-weight: 600;  ">Home</a>
+                <a href="" style="color:black; font-weight: 600; ">Video Gal</a>
+                <a href="" style="color:black; font-weight: 600; ">Contact Us</a>
+                <a href="" style="color:black; font-weight: 600; ">AboutUs</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="mcc">
+            <div class="containerw">
+                <div class="write">
+                    <div class="h">
+                        SkyBrightTravels.
+                    </div>
+                </div>
+                <div class="cursor"></div>
+            </div>
+        </div>
+        <script>
+            let counter = 0;
+            let zx = document.querySelector(".h");
+            let zx2 = document.querySelector(".write");
+            sh = () => {
+                counter++;
+                if (counter == 1) {
+                    zx.innerText = "Explore.";
+                    zx2.style.animationDuration = "3s";
+                }
+                if (counter == 2) {
+                    zx.innerText = "Travel.";
+                    zx2.style.animationDuration = "3s";
+                }
+                if (counter == 3) {
+                    zx.innerText = " SkyBrightTravels.";
+                    zx2.style.animationDuration = "3s";
+                    counter = 0;
+                }
+            }
+            let ch = setInterval(sh, 3000);
+        </script>
+        <div class="hc">
+            <div class="color"></div>
+            <span>company</span>
+        </div>
+        <div class="picc" id="picc">
+            <div class="first" id="first"></div>
+            <div class="third" id="third">
+                <h1 class="lh1" id="lh1">Logo</h1>
+            </div>
+        </div>
+        <div class="aboutS">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum numquam, esse corporis quos atque iste laborum voluptatibus a, natus aperiam quas similique, quasi alias impedit error? Illo inventore saepe culpa rerum, debitis, ratione sapiente reiciendis
+            consectetur est reprehenderit, provident odio labore a facere adipisci ex sequi tempora autem temporibus nulla cum. Ducimus quibusdam ipsam possimus recusandae ad officiis similique nisi eligendi reiciendis quae iusto distinctio necessitatibus
+            nihil eos modi quasi provident deserunt consequatur perspiciatis inventore illum, nemo, placeat ut laborum? Libero rerum minus, iste et ab odio dolorum dignissimos voluptate perferendis tempora, sint odit in exercitationem officia quos, illo
+            eligendi facere hic. Deleniti aliquam deserunt quis repellat commodi? Aliquid soluta quasi ducimus, enim porro quis reprehenderit omnis cupiditate. Ipsa ea adipisci laborum autem ab ad! Voluptas, aut? Numquam quia placeat commodi ipsam voluptas
+            nam fugiat!
+        </div>
+        <div class="hc">
+            <div class="color"></div>
+            <span>creator</span>
+        </div>
+        <div class="mc">
+            <div class="container" id="con1">
+                <div class="c1" id="c1">
+                    <div class="bottom" id="bottom"></div>
+                    <div class="center" id="center">
+                        <button type="button" class="btn btn-default btn-lg" id="btn">
+                        <span class="glyphicon glyphicon-arrow-right g1" id="g1"></span>
+                    </button>
+                    </div>
+                    <div class="top" id="top"></div>
+                    <div class="ii" id="ii">
+                        <h3 class="hii">Harshul Shah</h3>
+                        <span class="sh">L.D College, IT Dept</span>
+                    </div>
+                </div>
+                <div class="c2" id="c2">
+                    <div class="bottom2" id="bottom2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, repellat placeat aliquam maxime nihil nobis fugit voluptatum a quo minus perferendis! Provident, ex doloremque. Eaque iste quia quisquam incidunt facilis, ratione sed
+                        tempora esse dolores labore cum soluta delectus et.</div>
+                    <div class="center2" id="center2">
+                        <li>
+                            <a href="https://www.instagram.com/shah_harshul_s/"><img src="https://i.ibb.co/ySwtH4B/instagram.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" /></a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="c12" id="c12">
+                    <div class="ii2" id="ii2">
+                        <h3 class="hii">Meet Shah</h3>
+                        <span class="sh">L.J College, COMP Dept</span>
+                    </div>
+                    <div class="bottom3" id="bottom3"></div>
+                    <div class="center3" id="center3">
+                        <button type="button" class="btn btn-default btn-lg btn2" id="btn2">
+                        <span class="glyphicon glyphicon-arrow-right g1" id="g12"></span>
+                    </button>
+                    </div>
+                    <div class="top2" id="top2"></div>
+                </div>
+                <div class="c22" id="c22">
+                    <div class="bottom22" id="bottom22">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, repellat placeat aliquam maxime nihil nobis fugit voluptatum a quo minus perferendis! Provident, ex doloremque. Eaque iste quia quisquam incidunt facilis, ratione sed
+                        tempora esse dolores labore cum soluta delectus et.</div>
+                    <div class="center22" id="center22">
+                        <li>
+                            <a href="https://www.instagram.com/shah_harshul_s/"><img src="https://i.ibb.co/ySwtH4B/instagram.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" /></a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hc">
+            <div class="color"></div>
+            <span>projects</span>
+        </div>
+    </main>
+    <script>
+        a = document.getElementById('c1');
+        b = document.getElementById('center');
+        c = document.getElementById('btn');
+        d = document.getElementById('bottom2');
+        e = document.getElementById('center2');
+        f = document.getElementById('c2');
+        a2 = document.getElementById('c12');
+        b2 = document.getElementById('center3');
+        c2 = document.getElementById('btn2');
+        d2 = document.getElementById('bottom22');
+        e2 = document.getElementById('center22');
+        f2 = document.getElementById('c22');
+        g = document.getElementById('ii');
+        g2 = document.getElementById('ii2');
+        h = document.getElementById('con1');
+        let count = 0;
+        let count2 = 0;
+        let x = window.matchMedia("(min-width:992px)")
+        if (x.matches) {
+            a.addEventListener('mouseover', () => {
+                b.style.opacity = "1";
+                b.style.left = "81%";
+                b.style.width = "20%";
+                b.style.zIndex = "3";
+                c.style.width = "100%";
+                g.style.opacity = "1";
+                g.style.zIndex = "1";
+            })
+            a.addEventListener('mouseout', () => {
+                b.style.opacity = "0";
+                b.style.left = "100%";
+                b.style.width = "0%";
+                b.style.zIndex = "1";
+                c.style.width = "0%";
+                g.style.opacity = "0";
+                g.style.zIndex = "0";
+            })
+            a2.addEventListener('mouseover', () => {
+                g2.style.zIndex = "1";
+                b2.style.opacity = "1";
+                b2.style.left = "81%";
+                b2.style.width = "20%";
+                b2.style.zIndex = "3";
+                c2.style.width = "100%";
+                g2.style.opacity = "1";
+            })
+            a2.addEventListener('mouseout', () => {
+                g2.style.zIndex = "0";
+                b2.style.opacity = "0";
+                b2.style.left = "100%";
+                b2.style.width = "0%";
+                b2.style.zIndex = "1";
+                c2.style.width = "0%";
+                g2.style.opacity = "0";
+            })
+            c.addEventListener("click", () => {
+                count++;
+                if (count % 2 != 0) {
+                    f.style.opacity = "1";
+                    d.style.opacity = "1";
+                    d.style.width = "100%"
+                    c.style.transform = "rotate(-180deg)";
+                    e.style.opacity = "1";
+                    e.style.top = "81%";
+                    e.style.height = "20%";
+                    e.style.zIndex = "2";
+                    e.style.transition = "0.7s ease-in-out";
+                    f.style.width = "450px"
+                }
+                if (count % 2 == 0) {
+                    f.style.width = "0px"
+                    f.style.opacity = "0";
+                    d.style.opacity = "0";
+                    d.style.width = "0%"
+                    c.style.transform = "rotate(0deg)";
+                    e.style.opacity = "0";
+                    e.style.top = "100%";
+                    e.style.height = "0%";
+                    e.style.zIndex = "-1";
+                    e.style.transition = "0.01s ease-in-out";
+                }
+            })
+            c2.addEventListener("click", () => {
+                count2++;
+                if (count2 % 2 != 0) {
+                    f2.style.opacity = "1";
+                    d2.style.opacity = "1";
+                    d2.style.width = "100%"
+                    c2.style.transform = "rotate(-180deg)";
+                    e2.style.opacity = "1";
+                    e2.style.top = "81%";
+                    e2.style.height = "20%";
+                    e2.style.zIndex = "2";
+                    e2.style.transition = "0.7s ease-in-out";
+                    f2.style.width = "450px"
+                }
+                if (count2 % 2 == 0) {
+                    f2.style.width = "0px"
+                    f2.style.opacity = "0";
+                    d2.style.opacity = "0";
+                    d2.style.width = "0%"
+                    c2.style.transform = "rotate(0deg)";
+                    e2.style.opacity = "0";
+                    e2.style.top = "100%";
+                    e2.style.height = "0%";
+                    e2.style.zIndex = "-1";
+                    e2.style.transition = "0.01s ease-in-out";
+                }
+            })
+        } else {
+            a.addEventListener('mouseover', () => {
+                b.style.opacity = "1";
+                b.style.left = "0%";
+                b.style.top = "80%";
+                b.style.width = "100%";
+                b.style.height = "20%";
+                b.style.zIndex = "3";
+                c.style.width = "100%";
+                g.style.opacity = "1";
+                g.style.zIndex = "1";
+            })
+            a.addEventListener('mouseout', () => {
+                b.style.opacity = "0";
+                b.style.left = "0%";
+                b.style.top = "100%";
+                b.style.width = "100%";
+                b.style.height = "0%";
+                b.style.zIndex = "1";
+                c.style.width = "0%";
+                g.style.opacity = "0";
+                g.style.zIndex = "0";
+            })
+            a2.addEventListener('mouseover', () => {
+                b2.style.opacity = "1";
+                b2.style.left = "0%";
+                b2.style.top = "80%";
+                b2.style.width = "100%";
+                b2.style.height = "20%";
+                b2.style.zIndex = "3";
+                c2.style.width = "100%";
+                g2.style.zIndex = "1";
+                g2.style.opacity = "1";
+            })
+            a2.addEventListener('mouseout', () => {
+                b2.style.opacity = "0";
+                b2.style.left = "0%";
+                b2.style.top = "100%";
+                b2.style.width = "100%";
+                b2.style.height = "0%";
+                b2.style.zIndex = "1";
+                c2.style.width = "0%";
+                g2.style.zIndex = "0";
+                g2.style.opacity = "0";
+            })
+            c.addEventListener("click", () => {
+                count++;
+                if (count % 2 != 0) {
+                    f.style.opacity = "1";
+                    d.style.opacity = "1";
+                    d.style.width = "100%"
+                    c.style.transform = "rotate(270deg)";
+                    e.style.opacity = "1";
+                    e.style.top = "81%";
+                    e.style.height = "20%";
+                    e.style.zIndex = "2";
+                    e.style.transition = "0.7s ease-in-out";
+                    f.style.width = "450px"
+                    f.style.height = "400px"
+                }
+                if (count % 2 == 0) {
+                    f.style.height = "0px"
+                    f.style.width = "450px"
+                    f.style.opacity = "0";
+                    d.style.opacity = "0";
+                    d.style.width = "0%"
+                    c.style.transform = "rotate(90deg)";
+                    e.style.opacity = "0";
+                    e.style.top = "100%";
+                    e.style.height = "0%";
+                    e.style.zIndex = "-1";
+                    e.style.transition = "0.01s ease-in-out";
+                    f.style.transition = "0.3s ease-in-out";
+                }
+            })
+            c2.addEventListener("click", () => {
+                count2++;
+                if (count2 % 2 != 0) {
+                    f2.style.opacity = "1";
+                    d2.style.opacity = "1";
+                    d2.style.width = "100%"
+                    c2.style.transform = "rotate(270deg)";
+                    e2.style.opacity = "1";
+                    e2.style.top = "81%";
+                    e2.style.height = "20%";
+                    e2.style.zIndex = "2";
+                    e2.style.transition = "0.7s ease-in-out";
+                    f2.style.width = "450px"
+                    f2.style.height = "400px"
+                }
+                if (count2 % 2 == 0) {
+                    f2.style.height = "0px"
+                    f2.style.width = "450px"
+                    f2.style.opacity = "0";
+                    d2.style.opacity = "0";
+                    d2.style.width = "0%"
+                    c2.style.transform = "rotate(90deg)";
+                    e2.style.opacity = "0";
+                    e2.style.top = "100%";
+                    e2.style.height = "0%";
+                    e2.style.zIndex = "-1";
+                    e2.style.transition = "0.01s ease-in-out";
+                    f2.style.transition = "0.3s ease-in-out";
+                }
+            })
+        }
+        let btn = document.querySelector(".menunav");
+        let nav = document.querySelector(".navbar");
+        btn.addEventListener("click", () => {
+            btn.classList.toggle("active");
+            nav.classList.toggle("active");
+        });
+        let z = document.getElementById("picc");
+        let y = document.getElementById("first");
+        let w = document.getElementById("lh1");
+        let j = document.getElementById("third");
+        z.addEventListener("mouseover", () => {
+            w.style.opacity = "1";
+            j.style.width = "95%";
+            j.style.height = "85%";
+            j.style.border = "4px solid #03a9f4";
+            y.style.opacity = 0.5;
+            j.style.backgroundColor = "rgba(0,0,0,0.5)";
+        })
+        z.addEventListener("mouseout", () => {
+            y.style.opacity = 0.85;
+            w.style.opacity = "0";
+            j.style.width = "100%";
+            j.style.height = "100%";
+            j.style.border = "none";
+            j.style.backgroundColor = "rgba(0,0,0,0)";
+        })
+    </script>
+    <footer>
+        <div class="containerd">
+            <div class="rowa">
+                <div class="cont1">
+                    <div class="1hu">
+                        <h1>SkyBright Travels</h1>
+                        <br>
+                        <p>We Plan the best possible vaccation trips for you.</p>
+                        <span><b>Be Bold.</b></span>
+                    </div>
+                </div>
+                <div class="cont2">
+                    <div class="2hu">
+                        <h3>Explore</h2>
+                            <li><a href="#" class="fa">Home</a></li>
+                            <li><a href="#" class="fa">About</a></li>
+                            <li><a href="#" class="fa">VideoGallery</a></li>
+                            <li><a href="#" class="fa">ContactUs</a></li>
+                    </div>
+                </div>
+                <div class="cont3">
+                    <div class="3hu">
+                        <h3>Visit Our Other Sites</h2>
+                            <li>
+                                <a href="https://harshul2611.000webhostapp.com/" class="fa">LifeStyle Store</a>
+                            </li>
+                            <li><a href="https://contentdummywebsite.000webhostapp.com/" class="fa">E-Commerce Store</a></li>
+                            <br>
+                            <h3>ContactUs</h3>
+                            <a href="#" class="fa">skybright@gmail.com</a>
+                            <br>
+                            <p>98789544648454</p>
+                    </div>
+                </div>
+                <div class="cont4">
+                    <div class="4hu">
+                        <h3>Legal</h2>
+                            <li>
+                                Terms
+                            </li>
+                            <li>Privacy</li>
+                            <br>
+                            <h3>Follow</h3>
+                            <li><a href="#" class="fa">Instagram</a></li>
+                            <li><a href="#" class="fa">Twitter</a></li>
+                            <li><a href="#" class="fa">LinkedIn</a></li>
+                    </div>
+                </div>
+                <div class="cont5">
+                    <div class="5hu">
+                        <h3>
+                            <u>Next</u>
+                            <u> : </u>
+                            <u> <a href="#" class="fa">AboutUs</a></u>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="rowa">
+                <div class="cpy">
+                    <p> Copyright © 2021 SkyBright Travels. All Rights Reserved </p>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1033 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background: rgb(181, 204, 215);
+    background: linear-gradient(81deg, rgba(181, 204, 215, 1) 35%, rgba(12, 46, 85, 0.7430322470785189) 89%);
+}
+
+.title {
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    position: fixed;
+    text-align: right;
+    top: 10%;
+    right: 0;
+    padding: 10px 15px;
+    margin: 0;
+    z-index: 100;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    top: 10%;
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide {
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 95vh;
+    width: 100%;
+}
+
+.slide.active {
+    transform: translateX(-100%);
+}
+
+.slide .info {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    padding: 20px 15px;
+    position: absolute;
+    opacity: 0.1;
+    top: 520px;
+    left: 40px;
+    text-align: center;
+    width: 300px;
+    max-width: 100%;
+}
+
+.slide.active .info {
+    opacity: 1;
+    transform: translateY(-40px);
+    transition: all 0.5s ease-in-out 0.8s;
+}
+
+.slide .info h1 {
+    margin: 10px 0;
+}
+
+.slide .info p {
+    letter-spacing: 1px;
+}
+
+.eraser {
+    background: #f5f5f5;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0.95;
+    top: 0;
+    left: 100%;
+    /* height: 100%; */
+    height: 95vh;
+    width: 100%;
+    z-index: 100;
+}
+
+.eraser.active {
+    transform: translateX(-100%);
+}
+
+.buttons-container {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    top: 82%;
+    /*   display: flex; */
+}
+
+.buttons-container button {
+    border: 2px solid #fff;
+    /* background-color: transparent; */
+    background-color: #f5f5f5;
+    /* color: #fff; */
+    color: #333;
+    cursor: pointer;
+    padding: 8px 30px;
+    margin-right: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.buttons-container button:hover {
+    background-color: #fff;
+    color: #A9A9A9;
+    opacity: 0.9;
+}
+
+@media (max-width: 400px) {
+    .slide .info {
+        top: 100px;
+        left: 5px;
+        /* top: 250px;
+        left: 5px; */
+    }
+}
+
+header {
+    position: absolute;
+    /* background: #fff; */
+    /* background: #fff linear-gradient(90deg, #d0cbcb, #20b920e6, #ef3f33, rgba(0, 0, 0, 0.8)); */
+    background: rgb(148, 181, 196);
+    background: linear-gradient(81deg, rgba(148, 181, 196, 1) 35%, rgba(21, 91, 173, 0.7430322470785189) 89%);
+    width: 100%;
+    height: 10vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 170px;
+    transition: 0.4s ease;
+    z-index: 1000000;
+}
+
+.ourname {
+    /* color: black; */
+    color: black !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+span {
+    font-size: 2em;
+    color: #800000;
+    color: #00205b;
+    color: rgba(30, 191, 167, 0.9);
+    transition: 0.5s;
+}
+
+#spn2 {
+    margin-left: 15px;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbaritems a {
+    color: rgb(207, 23, 54);
+    color: white !important;
+    color: black !important;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 0px 15px;
+    transition: 0.4s ease;
+    position: relative;
+    top: 18;
+}
+
+.navbaritems a::before {
+    content: "";
+    /* background: #800000; */
+    /* background-color: #f7b42c;
+    background-color: #36096d; */
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    /* background: linear-gradient(90deg, #000428, #004e92); */
+    /* background: linear-gradient(90deg, #ff9966, #ff5e62); */
+    /* background: linear-gradient(90deg, #4568dc, #b06ab3); */
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s ease;
+}
+
+.navbaritems a:hover::before {
+    width: 100%;
+}
+
+@media (max-width: 1000px) and (min-width:701px) {
+    header {
+        padding: 15px 61px;
+        width: 100%;
+    }
+    .navbaritems a {
+        font-size: 1.1em;
+        margin: 0px 6px;
+    }
+    .ourname {
+        font-size: 1.2em;
+    }
+}
+
+.c {
+    /* position: absolute; */
+    width: 100%;
+    margin-top: 41px;
+}
+
+@media(max-width:970px) {
+    .c {
+        top: 9%;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 15px 15px;
+    }
+    .navbar {
+        display: none;
+    }
+    .navbar.active {
+        position: fixed;
+        border: 3px solid black;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(1, 1, 1, 0.5);
+        backdrop-filter: blur(2px);
+    }
+    .navbar.active .navbaritems {
+        backdrop-filter: blur(4px);
+        background: transparent;
+        width: 400px;
+        height: 400px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 5px 50px rgb(1 1 1 /20%);
+        font-size: 14px;
+    }
+    .navbaritems a {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.2em;
+        margin: 20px;
+        font-weight: bold;
+        color: white !important;
+    }
+    .menunav {
+        background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png") no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.4s ease;
+        z-index: 1000000;
+    }
+    .menunav.active {
+        z-index: 1000000;
+        transition: 0.4s ease;
+        background: url("https://cdn1.vectorstock.com/i/1000x1000/96/55/close-icon-delete-remove-cancel-exit-symbol-vector-21679655.jpg") no-repeat;
+        background-position: center;
+    }
+    .rainbow {
+        opacity: 0;
+    }
+    .ourname {
+        font-size: 1.1em;
+    }
+    .c {
+        top: 7%;
+        margin-top: 41px;
+    }
+    header {
+        background: rgb(148, 181, 196);
+        background: linear-gradient(81deg, rgba(148, 181, 196, 1) 35%, rgba(21, 91, 173, 0.7430322470785189) 89%);
+    }
+}
+
+@media(max-width:1150px) and (min-width:1000px) {
+    .ourname {
+        font-size: 1.5em;
+    }
+    .navbaritems a {
+        font-size: 1.4em;
+        margin: 0px 7px;
+    }
+}
+
+.mc1 {
+    position: absolute;
+    width: 100vw;
+    z-index: -100;
+}
+
+@media(min-width:1500px) {
+    .mainp {
+        width: 100%;
+    }
+}
+
+@media(min-width:700px) {
+    .mc1 {
+        top: 10%;
+    }
+}
+
+@media(max-width:1379px) {
+    .slider {
+        display: none;
+    }
+}
+
+@media(min-width:1379px) {
+    .c {
+        display: none;
+    }
+}
+
+@media(max-width:600px) {
+    .c {
+        display: block;
+        top: 10%;
+    }
+}
+
+@media(min-height:1130px) {
+    header {
+        padding: 23px 60px;
+    }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.856);
+    width: 100%;
+    /* position: absolute;
+    bottom: 0%; */
+    /* cursor: pointer; */
+    /* min-height: %; */
+    color: whitesmoke;
+}
+
+.cont1 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont2 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont3 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont4 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont5 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.rowa {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+    margin-top: 4px;
+}
+
+.fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+li .fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+u .fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+.fa:hover {
+    color: rgba(223, 124, 143, 0.89) !important;
+}
+
+#BB {
+    color: #03a9f4;
+}
+
+.maincontainerd {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.containersd {
+    width: 100%;
+    /* height: 500px; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* margin: 10px 10px 0px 20px; */
+    flex-wrap: wrap;
+}
+
+.c6,
+.c7,
+.c8,
+.c1,
+.c2,
+.c3,
+.c4,
+.c5 {
+    width: 500px;
+    /* height: 100%; */
+    height: 500px;
+    position: relative;
+    margin: 10px 10px 20px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pz {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://maldivesfinest.com/images-resorts-2/milaidhoo.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pz2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/59/2c/02/radisson-blu-resort-maldives.jpg?w=900&h=-1&s=1")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visualitineraries.com/img/articles/Angsana-Resort-Spa-Ihuru-Maldives.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic4 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://flashpackingfamily.com/wp-content/uploads/2019/05/White-sand-and-turquoise-waters-of-the-Maldives.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://theasiacollective.com/wp-content/uploads/2020/01/Waldorf-1.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.cityam.com/wp-content/uploads/2021/03/maldives-1280x720.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic7 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://theworldpursuit.com/wp-content/uploads/2018/12/Maldives.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic8 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.cntravellerme.com/2021/05/FtificeN-vakkaru-maldives-1568x882.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.center6,
+.center7,
+.center8,
+.center5,
+.center4,
+.center3,
+.center2,
+.center {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: black;
+    z-index: 2;
+    /* background: rgba(0, 0, 0, 0.8); */
+    color: #fff;
+    /* transform: translate(53%, 74%); */
+    /*👉 transform: translate(4%, 4%);👈*/
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.top,
+.top2,
+.top3,
+.top4,
+.top5,
+.top6,
+.top7,
+.top8 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 5px black;
+}
+
+.cardcont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 3px solid red; */
+}
+
+.card {
+    width: 600px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px 5px;
+    box-shadow: 0px 0px 7px black;
+}
+
+.content {
+    height: 310px;
+    width: 350px;
+    /* border: 2px solid blue; */
+    position: relative;
+}
+
+.pic {
+    height: 310px;
+    width: 240px;
+    /* border: 2px solid blue; */
+    overflow: hidden;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+    /* border-bottom: 3px solid black; */
+}
+
+.rate {
+    /* width: 60px; */
+    /* height: 30px; */
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 5px 5px;
+    margin-right: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+.star {
+    width: 40px;
+}
+
+.addres {
+    color: rgb(73, 73, 73);
+    opacity: 0.8;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.full {
+    padding-left: 10px;
+    font-size: 16px;
+    padding-right: 10px;
+    color: rgb(73, 73, 73);
+    opacity: 1;
+    /* margin-top: 2px; */
+}
+
+li {
+    list-style: none;
+}
+
+.list {
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.hoteldesc {
+    font-size: 12px;
+    /* margin-top: 5px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.book {
+    width: 100%;
+    padding: 9px 5px;
+    margin-top: 0px;
+    outline: none;
+    background-color: rgb(85, 85, 231);
+    color: white;
+    font-weight: bold;
+    /* margin-top: 12px; */
+    cursor: pointer;
+    margin-left: 2px;
+    position: absolute;
+    bottom: 2px;
+}
+
+.book:hover {
+    background-color: rgba(85, 85, 231, 0.849);
+}
+
+#pic1 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/59950977.jpg?k=fe033cad25b4c26c54e2de86479a9c3e26d25b5d9f0f922971dc9da85a0df198&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pic {
+    position: relative;
+}
+
+.dummy {
+    background-color: rgba(168, 180, 190, 0.726);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: -240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    /* align-items: center; */
+    padding: 0px 10px;
+    transition: 0.5s;
+    color: black;
+}
+
+.dummy li {
+    transition: 0.3s ease-in-out;
+}
+
+.dummy li:hover {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.dummy p {
+    font-style: italic;
+}
+
+#haa {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Baloo Bhaina 2", cursive;
+}
+
+.pic:hover .dummy {
+    top: 0;
+    left: 0;
+}
+
+#pic2 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/257137397.jpg?k=3c70e5f849b57f916aefe407dda2d5a233cb115a1be58f276dd783a156928904&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#btn-grad {
+    background-image: linear-gradient( to right, #314755 0%, #26a0da 51%, #314755 100%);
+}
+
+#btn-grad {
+    margin: 0px;
+    margin-left: -15px;
+    margin-top: 1px;
+    padding: 5px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: none;
+}
+
+#btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.cross {
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 35px;
+    display: none;
+}
+
+@media (max-width:600px) {
+    .cross {
+        display: block;
+    }
+    #btn-grad {
+        display: block;
+    }
+}
+
+.space {
+    margin-bottom: 50px;
+}
+
+.mainc {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 20px 20px 10px 20px; */
+}
+
+.cu {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.b {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background: url("https://globalgrasshopper.com/wp-content/uploads/2019/10/1024x683_Hurawalhi-Island-Resort-1000x667.jpg")no-repeat center center/cover;
+    opacity: 0.9;
+}
+
+.cn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#h1 {
+    position: absolute;
+    top: 5%;
+    left: 7%;
+    color: #fff;
+}
+
+#h2 {
+    position: absolute;
+    bottom: 40%;
+    color: #fff;
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+
+#h3 {
+    position: absolute;
+    bottom: 32%;
+    color: #fff;
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+
+#b1 {
+    position: absolute;
+    bottom: 20%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: 3px solid #fff;
+    /* padding: 10px 12px; */
+    border-radius: 20px;
+    letter-spacing: 1px;
+    transition: 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+#b1:hover {
+    background-color: #fff;
+    color: rgb(126, 120, 120);
+}
+
+.t {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+@media(max-width:980px) {
+    #h3,
+    #h2 {
+        font-size: 3em;
+    }
+}
+
+@media(max-width:750px) {
+    #h3,
+    #h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media(max-width:350px) {
+    #h3,
+    #h2 {
+        font-size: 2em;
+    }
+}
+
+.news {
+    margin: 0em auto;
+    padding: 1.5em;
+    background: linear-gradient(white, white) padding-box, url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/80625/sea.jpg) border-box 0 / cover;
+    border: 2em solid transparent;
+    box-shadow: 5px 3px 30px black;
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    line-height: 1.5;
+    width: 80%;
+}
+
+.aut {
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.coverrr {
+    background-color: transparent;
+    padding: 50px 0px;
+}
+
+.heaa {
+    text-align: center;
+    padding: 10px 0px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+#hello {
+    text-align: center;
+    margin-top: -60px;
+    font-size: 15px;
+    font-style: italic;
+    color: red;
+}
+
+.sas {
+    color: black !important;
+}
+
+.sas:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.sas:hover span {
+    color: red;
+}
+
+#pzz1 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1280x900/272589922.jpg?k=4059e9e3d089dc4baf98b95022ddd71313ebd7df1fecefc8babd8c1bd75da302&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#pzz2 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/115492303.jpg?k=3c4ba0939e6ca29c1c27e0ed48a139ecd34c86a01a4ea7c5f47e06b09bd0d434&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#pzz5 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/287331792.jpg?k=1b3b445d2aea1bfba211e348f08d594213e50aa3197c27728da132f9607fcf19&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#pzz4 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/206230289.jpg?k=c157bc5cd687cf03b8f0f8f150a32ec4c430d77f48970216f6c8dff653bac989&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#pzz3 {
+    background-image: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/215173096.jpg?k=1da3ffff5c60c3bdec6459eeb6a57ef5c333844d60fefe903eed3e21f49db299&o=&hp=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#pzz6 {
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/de/fe/35/hero-image-stamp.jpg?w=1200&h=-1&s=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+@media(min-width:1600px) {
+    .slide {
+        top: 1px;
+    }
+}

@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* overflow-x: hidden; */
+}
+
+body {
+    height: 100vh;
+    background-color: #2980b9;
+}
+
+html {
+    height: 100vh;
+}
+
+main {
+    min-height: max-content;
+    margin: 0;
+    background-color: #2980b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 100px; */
+}
+
+.containersd {
+    margin-top: 16%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6 {
+    /* height: 100%; */
+    height: 660px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 10px 20px 20px;
+    margin-bottom: 100px;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+.pic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visitdubai.com/-/media/gathercontent/poi/b/burj-khalifa/fallback-image/burj-khalifa.jpg?rev=495d595a03bb45ad98afc64493ac29fe&cx=0.62&cy=0.32&cw=1556&ch=690")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visitdubai.com/-/media/gathercontent/poi/m/mall-of-the-emirates/mall-of-emirates-dtcm-2.jpg?rev=910d50d107c84ff98214d42363385bba&cx=0.5&cy=0.5&cw=1556&ch=690")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visitdubai.com/-/media/gathercontent/poi/a/ain-dubai/fallback-image/ain-dubai-dtcm-01.jpg?rev=74bf48818321466fbf3e368e248327f6&cx=0.5&cy=0.5&cw=1556&ch=690")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic4 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visitdubai.com/-/media/gathercontent/poi/d/deep-dive/deep-dive-dubai-abandoned-house.jpg?rev=d5e164716dc8453192aa308a8a67839f&cx=0.5&cy=0.5&cw=1556&ch=690")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visitdubai.com/-/media/gathercontent/poi/n/nemo-watersports/nemo-watersports-v2.jpg?rev=cda504f4d4114f77bbe44f867e9849ea&cx=0.5&cy=0.5&cw=1556&ch=690")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.visitdubai.com/-/media/gathercontent/poi/z/zuma/fallback-image/zuma-poi-zuma-1.jpg?rev=450db75f66814234805c0590253f67c2&cx=0.5&cy=0.5&cw=1556&ch=690")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.center,
+.center2,
+.center3,
+.center4,
+.center5,
+.center6 {
+    position: absolute;
+    width: 75%;
+    /* height: 60%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    transform: translate(-12%, 0%);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    font-size: 1.2em;
+    padding: 10px 12px;
+    overflow: hidden;
+}
+
+.top,
+.top2,
+.top3,
+.top4,
+.top5,
+.top6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.h1 {
+    /* color: #fff; */
+    font-size: 7.5rem;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+}
+
+.h1:hover {
+    color: rgb(243, 133, 133);
+}
+
+.h4 {
+    font-size: 5rem;
+}
+
+.h2 {
+    position: absolute;
+    left: 2%;
+    top: 15px;
+    font-size: 2.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media(max-width:1434px) {
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        width: 100%;
+        transform: translate(0%, 0%);
+        font-size: 1em;
+    }
+}
+
+@media(max-width:400px) {
+    .h1 {
+        font-size: 1.7em;
+    }
+    .h2 {
+        font-size: 1.5em;
+    }
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        width: 100%;
+        transform: translate(0%, 0%);
+        font-size: 0.8em;
+    }
+}
+
+@media(max-width:1100px) {
+    .h1 {
+        font-size: 4rem;
+    }
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        width: 100%;
+        transform: translate(0%, 0%);
+        font-size: 1em;
+    }
+    .h4 {
+        font-size: 3rem;
+    }
+    .containersd {
+        margin-top: 50%;
+    }
+}
+
+@media(max-width:726px) {
+    .h4 {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:750px) {
+    .h1 {
+        font-size: 3em;
+    }
+}
+
+@media(max-width:600px) {
+    .h1 {
+        font-size: 2em;
+    }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.856);
+    /* width: 100%;
+    cursor: pointer;
+    height: 55%; */
+    color: whitesmoke;
+    margin-top: 35px;
+    min-height: 60vh;
+    max-height: max-content;
+    /* background: gray; */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerd {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cont1 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont2 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont3 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont4 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont5 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.rowa {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+    margin-top: 4px;
+}
+
+.fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+li .fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+u .fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+.cpy p {
+    position: relative;
+    bottom: -34px;
+}
+
+@media(min-width:1000px) {
+    .cpy p {
+        bottom: -63px;
+    }
+}
+
+.mc {
+    margin: 10px 20px 20px;
+}
+
+@media(max-width:500px) {
+    .c1,
+    .c2,
+    .c3,
+    .c4,
+    .c5,
+    .c6 {
+        height: 450px;
+    }
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        font-size: 0.7em;
+    }
+}

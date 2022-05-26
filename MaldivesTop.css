@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* overflow-x: hidden; */
+}
+
+body {
+    height: 100vh;
+    background-color: #2980b9;
+}
+
+html {
+    height: 100vh;
+}
+
+main {
+    min-height: max-content;
+    margin: 0;
+    background-color: #2980b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 100px; */
+}
+
+.containersd {
+    margin-top: 16%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6 {
+    /* height: 100%; */
+    height: 660px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 10px 20px 20px;
+    margin-bottom: 100px;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+.pic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://pix10.agoda.net/hotelImages/5874343/-1/cec8865eba1b4faef4f0463e1f54a4c6.jpg?s=1024x768")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://www.pitter-yachting.com/images/marina/images/marina-hulhumale/marina-hulhumale-478.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://content.r9cdn.net/rimg/dimg/73/3b/3f3bbac7-city-303229-16805215fed.jpg?width=1750&height=1000&xhint=3162&yhint=1928&crop=true")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic4 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://visitmaldives.s3.amazonaws.com/BkoMMXod/c/pqigqxxu-gallery-carousel.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://img2.chinadaily.com.cn/images/201909/04/5d6f20aba310cf3e979aa5cb.jpeg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.pic6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url("https://images.thrillophilia.com/image/upload/s--FaD2BuaQ--/c_fill,g_auto/v1/attractions/images/000/006/441/original/1602045060_shutterstock_265529309.jpg.jpg")no-repeat center center/cover;
+    opacity: 0.87;
+}
+
+.center,
+.center2,
+.center3,
+.center4,
+.center5,
+.center6 {
+    position: absolute;
+    width: 75%;
+    /* height: 60%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    transform: translate(0%, 0%);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    font-size: 1.2em;
+    padding: 10px 12px;
+    overflow: hidden;
+}
+
+.top,
+.top2,
+.top3,
+.top4,
+.top5,
+.top6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.h1 {
+    /* color: #fff; */
+    font-size: 7.5rem;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+}
+
+.h1:hover {
+    color: rgb(243, 133, 133);
+}
+
+.h4 {
+    font-size: 5rem;
+}
+
+.h2 {
+    position: absolute;
+    left: 2%;
+    top: 15px;
+    font-size: 2.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media(max-width:1434px) {
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        width: 100%;
+        transform: translate(0%, 0%);
+        font-size: 1em;
+    }
+}
+
+@media(max-width:400px) {
+    .h1 {
+        font-size: 1.7em;
+    }
+    .h2 {
+        font-size: 1.5em;
+    }
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        width: 100%;
+        transform: translate(0%, 0%);
+        font-size: 0.8em;
+    }
+}
+
+@media(max-width:1100px) {
+    .h1 {
+        font-size: 4rem;
+    }
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        width: 100%;
+        transform: translate(0%, 0%);
+        font-size: 1em;
+    }
+    .h4 {
+        font-size: 3rem;
+    }
+    .containersd {
+        margin-top: 50%;
+    }
+}
+
+@media(max-width:726px) {
+    .h4 {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:750px) {
+    .h1 {
+        font-size: 3em;
+    }
+}
+
+@media(max-width:600px) {
+    .h1 {
+        font-size: 2em;
+    }
+}
+
+@media(max-width:500px) {
+    .c1,
+    .c2,
+    .c3,
+    .c4,
+    .c5,
+    .c6 {
+        height: 450px;
+        width: 300px;
+    }
+    .center,
+    .center2,
+    .center3,
+    .center4,
+    .center5,
+    .center6 {
+        font-size: 0.7em;
+    }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.856);
+    /* width: 100%;
+    cursor: pointer;
+    height: 55%; */
+    color: whitesmoke;
+    margin-top: 35px;
+    min-height: 60vh;
+    max-height: max-content;
+    /* background: gray; */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerd {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cont1 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont2 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont3 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont4 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.cont5 {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.rowa {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+    margin-top: 4px;
+}
+
+.fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+li .fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+u .fa {
+    text-decoration: none;
+    color: white!important;
+}
+
+.cpy p {
+    position: relative;
+    bottom: -34px;
+}
+
+@media(min-width:1000px) {
+    .cpy p {
+        bottom: -63px;
+    }
+}
+
+.mc {
+    margin: 10px 20px 20px;
+}
